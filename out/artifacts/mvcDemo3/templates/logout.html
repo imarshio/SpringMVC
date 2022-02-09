@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<h1>你已登出 </h1>
+<!--在thyme leaf的模板引擎中，超链接需要严格遵守其规范-->
+<!--超链接在thyme leaf中有两种方式
+    1、绝对路径，需要使用@{路径}
+    2、相对路径，需要使用-->
+<h1><a th:href="@{/}">回首页</a> </h1>
+<h1><a href="/">回首页</a> </h1>
+</body>
+</html>

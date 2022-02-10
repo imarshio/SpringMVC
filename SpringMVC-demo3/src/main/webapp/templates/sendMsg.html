@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>获取参数方法</title>
+    <title>传递参数方法</title>
 </head>
 <body>
-<h2>获取参数方法1：Servlet API</h2>
-<a th:href="@{testGetParamMethod1(username='ms',password=123456)}">Servlet API</a>
-<h2>获取参数方法2：形参</h2>
+<h2>传递参数方法1：Servlet API</h2>
+<a th:href="@{servletApi(username='ms',password=123456)}">Servlet API</a>
+<h2>传递参数方法2：形参</h2>
 <a th:href="@{testGetParamMethod2(username='ms',password=123456)}">形参直接获取</a>
 <div>
 
@@ -15,14 +15,14 @@
 
     <!--    </form>-->
 </div>
-<h2>获取参数方法3：@RequestParam</h2>
+<h2>传递参数方法3：@RequestParam</h2>
 <a th:href="@{testGetParamMethod3(username='ms',password=123456,sex='男')}">requestParam</a>
-<h2>获取参数方法4：@RequestHeader</h2>
+<h2>传递参数方法4：@RequestHeader</h2>
 <a th:href="@{testGetParamMethod4(username='ms',password=123456,sex='男')}">requestHeader</a>
-<h2>获取参数方法5：@CookieValue</h2>
+<h2>传递参数方法5：@CookieValue</h2>
 <a th:href="@{testGetParamMethod5(username='ms',password=123456,sex='男')}">getCookieValue</a>
 <hr>
-<h2>获取参数方法6：POJO</h2>
+<h2>传递参数方法6：POJO</h2>
 <h3>post方法</h3>
 <div>
     <form th:action="@{/testGetParamMethod6}" method="post">

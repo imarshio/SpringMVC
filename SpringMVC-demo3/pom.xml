@@ -18,7 +18,6 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- spring-webmvc包含spring基础组件以及spring-web组件,此即MVC的model层 -->

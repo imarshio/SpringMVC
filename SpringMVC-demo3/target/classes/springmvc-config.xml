@@ -13,7 +13,7 @@
 
     <!-- 添加view-controller，起作用类似rooter，当访问 / 路径时，会自动跳转进index页面 -->
     <!--path:就是要访问的路径，view-name：就是要访问的视图名称-->
-    <mvc:view-controller path="/" view-name="index"/>
+    <mvc:view-controller path="/demo3/" view-name="index"/>
     <mvc:view-controller path="/sendMsgToSession/" view-name="sendMsg"/>
     <mvc:view-controller path="/sendMsgToReq/" view-name="sendMsg"/>
     <mvc:view-controller path="/sendMsgToApp/" view-name="sendMsg"/>

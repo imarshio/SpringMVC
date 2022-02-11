@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+    <style type="text/css">
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>LastName</td>
+        <td>E-mail</td>
+        <td>Gender</td>
+        <td><a th:href="@{/toAdd}">add</a></td>
+    </tr>
+    </thead>
+    <tbody th:each="employee:${employees}">
+    <tr>
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.email}"></td>
+        <td th:text="${employee.gender}"></td>
+        <td>
+            <a href="employees.html">删除</a>
+            <a href="employees.html">修改</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

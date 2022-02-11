@@ -12,6 +12,7 @@
         <module>SpringMVC-demo1</module>
         <module>SpringMVC-demo2</module>
         <module>SpringMVC-demo3</module>
+        <module>SpringMVC-demo4</module>
     </modules>
 
     <build>

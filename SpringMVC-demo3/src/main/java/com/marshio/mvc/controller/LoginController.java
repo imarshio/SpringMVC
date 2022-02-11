@@ -20,9 +20,9 @@ public class LoginController {
      * 访问 /  ==》 就是访问  /templates/ index .html
      * @return login.html
      */
-    @RequestMapping(value = "/")
-    public String login(){
-        return "index";
-    }
+    // @RequestMapping(value = "/")
+    // public String login(){
+    //     return "index";
+    // }
 
 }

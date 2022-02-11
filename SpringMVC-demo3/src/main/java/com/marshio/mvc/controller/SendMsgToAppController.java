@@ -1,7 +1,6 @@
 package com.marshio.mvc.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.ServletContext;

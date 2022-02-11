@@ -8,19 +8,19 @@
 <h1>向Request域发送数据</h1>
 <div>
 
-    <h2>共享数据方法1：Servlet API</h2>
+    <h5>共享数据方法1：Servlet API</h5>
     <a th:href="@{/sendMsgToReq/servletApi(username='ms',password=123456)}">Servlet API</a>
 
-    <h2>共享数据方法2：ModelAndView</h2>
+    <h5>共享数据方法2：ModelAndView</h5>
     <a th:href="@{/sendMsgToReq/modelAndView(username='ms',password=123456)}">ModelAndView</a>
 
-    <h2>共享数据方法3：Map</h2>
+    <h5>共享数据方法3：Map</h5>
     <a th:href="@{/sendMsgToReq/map(username='ms',password=123456)}">Map</a>
 
-    <h2>共享数据方法4：Model</h2>
+    <h5>共享数据方法4：Model</h5>
     <a th:href="@{/sendMsgToReq/model(username='ms',password=123456)}">Model</a>
 
-    <h2>共享数据方法5：ModelMap</h2>
+    <h5>共享数据方法5：ModelMap</h5>
     <a th:href="@{/sendMsgToReq/modelMap(username='ms',password=123456)}">ModelMap</a>
 
 </div>
@@ -28,51 +28,17 @@
 
 <h1>向Session域发送数据</h1>
 <div>
-    <h2>共享数据方法6：Session 域</h2>
+    <h5>共享数据方法6：Session 域</h5>
     <a th:href="@{/sendMsgToSession/session(username='ms',password=123456)}">Session域共享</a>
 </div>
 <hr>
 
 <h1>向Application域发送数据</h1>
 <div>
-    <h2>共享数据方法7：Application 域</h2>
+    <h5>共享数据方法7：Application 域</h5>
     <a th:href="@{/sendMsgToApp/app(username='ms',password=123456)}">Application域共享</a>
 </div>
 <hr>
-<h2>共享数据方法7：POJO</h2>
-<h3>post方法</h3>
-<div>
-    <form th:action="@{/testGetParamMethod6}" method="post">
-        名称：<label><input type="text" name="name"></label><br>
-        密码：<label><input type="text" name="pwd"></label><br>
-        性别：<label><input type="radio" name="sex" value="男">男<input type="radio" name="sex" value="女">女</label><br>
-        年龄：<label><input type="text" name="age"></label><br>
-        爱好：<label>
-        <input type="checkbox" value="1" name="hobby">游戏
-        <input type="checkbox" value="2" name="hobby">看书
-        <input type="checkbox" value="3" name="hobby">编程
-    </label><br>
-
-        <input type="submit">
-    </form>
-</div>
-<hr>
-<h3>get方法</h3>
-<div>
-    <form th:action="@{/testGetParamMethod6}" method="get">
-        名称：<label><input type="text" name="name"></label><br>
-        密码：<label><input type="text" name="pwd"></label><br>
-        性别：<label><input type="radio" name="sex" value="男">男<input type="radio" name="sex" value="女">女</label><br>
-        年龄：<label><input type="text" name="age"></label><br>
-        爱好：<label>
-        <input type="checkbox" value="1" name="hobby">游戏
-        <input type="checkbox" value="2" name="hobby">看书
-        <input type="checkbox" value="3" name="hobby">编程
-    </label><br>
-
-        <input type="submit">
-    </form>
-</div>
 <h1><a th:href="@{/}">回首页</a></h1>
 </body>
 </html>

@@ -9,8 +9,7 @@
 
     <!--配置视图控制器，注意此处的 / 代表的是相对路径的-->
     <mvc:view-controller path="/" view-name="index"/>
-
-    <mvc:annotation-driven/>
+    <mvc:view-controller path="/toAdd" view-name="addEmployee"/>
 
     <!--配置thyme leaf视图解析器-->
     <bean id="thymeleafViewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
@@ -31,5 +30,27 @@
             </bean>
         </property>
     </bean>
+
+    <!--
+       处理静态资源，例如html、js、css、jpg
+      若只设置该标签，则只能访问静态资源，其他请求则无法访问
+      此时必须设置<mvc:annotation-driven/>解决问题
+    -->
+    <mvc:default-servlet-handler/>
+
+    <!--配置mvc的注解驱动-->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="defaultCharset" value="UTF-8"/>
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>test/html</value>
+                        <value>application/json</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
 </beans>

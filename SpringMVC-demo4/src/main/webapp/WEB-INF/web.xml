@@ -8,10 +8,19 @@
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceResponseEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>CharacterEncodingFilter</filter-name>
-        <url-pattern>/</url-pattern>
+        <!--注意这里必须是 /* -->
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
 
     <!--配置隐藏的HTTP请求过滤器，此过滤器支持将POST请求转换成PUT和DELETE请求-->
@@ -37,8 +46,9 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
+
 
 
 </web-app>

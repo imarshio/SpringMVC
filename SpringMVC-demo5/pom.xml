@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>SpringMVC-demo4</artifactId>
+    <artifactId>SpringMVC-demo5</artifactId>
 
-    <description>实现RESTful风格的请求</description>
+    <description>使用SpringMVC实现文件的上传和下载</description>
     <packaging>war</packaging>
     <dependencies>
 
@@ -39,5 +39,4 @@
             <version>3.0.11.RELEASE</version>
         </dependency>
     </dependencies>
-
 </project>

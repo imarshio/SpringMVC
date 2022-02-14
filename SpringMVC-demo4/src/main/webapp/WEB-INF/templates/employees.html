@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Employees</title>
     <style type="text/css">
-        table,th,td {
+        table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
             text-align: center;
@@ -30,11 +30,35 @@
         <td th:text="${employee.email}"></td>
         <td th:text="${employee.gender}"></td>
         <td>
-            <a href="employees.html">删除</a>
-            <a href="employees.html">修改</a>
+            <a id="delEmployee" @click="delEmployee" th:href="@{'/del/'+${employee.id}}">删除</a>
+            <a th:href="@{'/toUpdate/'+${employee.id}}">修改</a>
         </td>
     </tr>
     </tbody>
 </table>
+
+<form id="del-form" method="post">
+    <input type="hidden" name="_method" value="DELETE"/>
+</form>
+
+<script type="application/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="application/javascript">
+    new Vue({
+        el: "#delEmployee",
+        methods: {
+            //event 表示当前事件
+            delEmployee:function(event) {
+                //通过id获取表单标签
+                var delForm = document.getElementById("del-form");
+                //将超链接的地址赋值给表单的action属性
+                delForm.action = event.target.href;
+                //表单提交
+                delForm.submit();
+                //取消超链接的默认行为 --- 跳转
+                event.preventDefault();
+            }
+        }
+    });
+</script>
 </body>
 </html>

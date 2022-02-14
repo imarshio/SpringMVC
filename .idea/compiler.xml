@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringMVC-demo4" />
         <module name="SpringMVC-demo3" />
+        <module name="SpringMVC-demo5" />
         <module name="SpringMVC-demo2" />
         <module name="SpringMVC-demo1" />
       </profile>

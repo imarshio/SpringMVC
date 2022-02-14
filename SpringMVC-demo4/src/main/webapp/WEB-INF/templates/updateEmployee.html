@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+</head>
+<body>
+<div>
+    <form th:action="@{/updateEmployee}" th:each="employee:${employee}" method="post">
+        <!---->
+        <label><input type="hidden" name="id" th:value="${id}"></label>
+        <label><input type="hidden" name="_method" value="PUT"></label>
+        <label>
+            lastname:<input name="lastName" th:value="${employee.lastName}">
+        </label><br>
+        <label>
+            email:<input name="email" th:value="*{employee.email}">
+        </label><br>
+        <label>
+            gender:
+            <!--th:field 可以选中默认值-->
+            <input type="radio" value="1" name="gender" th:field="*{employee.gender}">男
+            <input type="radio" value="0" name="gender" th:field="*{employee.gender}">女
+            <!--也可以使用checked属性，加运算表达式选中默认-->
+            <input type="radio" value="1" name="gender1" th:checked="*{employee.gender} eq 1">男
+            <input type="radio" value="0" name="gender1" th:checked="*{employee.gender} eq 0">女
+        </label><br>
+        <!---->
+        <label>
+            <input th:checked="${#strings.contains(employee.lastName,'a')}" type="checkbox" value="a"/>a<br/>
+            <input th:checked="${#strings.contains(employee.lastName,'b')}" type="checkbox" value="b"/>b<br/>
+            <input th:checked="${#strings.contains(employee.lastName,'c')}" type="checkbox" value="c"/>c<br/>
+            <input th:checked="${#strings.contains(employee.lastName,'d')}" type="checkbox" value="d"/>d<br/>
+        </label><br>
+        <input type="submit" value="修改">
+    </form>
+</div>
+</body>
+</html>

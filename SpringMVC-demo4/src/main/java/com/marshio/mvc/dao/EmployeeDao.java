@@ -26,9 +26,10 @@ public class EmployeeDao {
         employees.put(1003, new Employee(1003, "E-CC", "cc@163.com", 0));
         employees.put(1004, new Employee(1004, "E-DD", "dd@163.com", 0));
         employees.put(1005, new Employee(1005, "E-EE", "ee@163.com", 1));
+        employees.put(1006, new Employee(1006, "你好", "ff@163.com", 1));
     }
 
-    private static Integer initId = 1006;
+    private static Integer initId = 1007;
 
     public void save(Employee employee){
         if(employee.getId() == null){

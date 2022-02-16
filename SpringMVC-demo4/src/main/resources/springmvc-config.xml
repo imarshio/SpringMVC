@@ -32,7 +32,7 @@
     </bean>
 
     <!--
-       处理静态资源，例如html、js、css、jpg
+      处理静态资源，例如html、js、css、jpg
       若只设置该标签，则只能访问静态资源，其他请求则无法访问
       此时必须设置<mvc:annotation-driven/>解决问题
     -->

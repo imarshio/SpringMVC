@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<h1> 欢迎 </h1>
+<div>
+    <h3>文件操作</h3>
+
+    <div>
+
+        <form th:action="@{/testUp}" method="post" enctype="multipart/form-data">
+            头像：<input type="file" name="photo"><br>
+            <input type="submit" value="上传">
+        </form>
+
+    </div>
+    <hr>
+    <div>
+        <a id="downloadFile" @click="downloadFile" th:href="@{/downloadFile}">文件下载</a>
+    </div>
+</div>
+
+<script type="application/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="application/javascript" th:src="@{/static/js/axios.min.js}"></script>
+<script type="application/javascript">
+    new Vue({
+        el:"#downloadFile",
+        methods:{
+            downloadFile(){
+                const iframe = document.createElement("iframe");
+                iframe.style.display = "none";  // 防止影响页面
+                iframe.style.height = 100;  // 防止影响页面
+                iframe.src = '';
+                document.body.appendChild(iframe);  // 这一行必须，iframe挂在到dom树上才会发请求
+                // 5分钟之后删除（onload方法对于下载链接不起作用，就先抠脚一下吧）
+                setTimeout(()=>{
+                    iframe.remove();
+                }, 5 * 60 * 1000);
+            }
+        }
+    });
+</script>
+</body>
+</html>

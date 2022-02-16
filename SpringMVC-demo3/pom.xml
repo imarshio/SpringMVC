@@ -11,6 +11,7 @@
     <packaging>war</packaging>
     <artifactId>SpringMVC-demo3</artifactId>
 
+    <description>常用注解以及前端数据传到后端，后端数据传向前端</description>
     <dependencies>
 
         <!-- logback-classic -->

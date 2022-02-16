@@ -12,6 +12,7 @@
     <packaging>war</packaging>
     <artifactId>SpringMVC-demo1</artifactId>
 
+    <description> 演示SpringMVC默认配置文件的配置方式</description>
     <dependencies>
         <!-- spring-webmvc包含spring基础组件以及spring-web组件,此即MVC的model层 -->
         <dependency>

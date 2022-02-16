@@ -3,14 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <!--  SpringMVC中处理编码的过滤器一定要配置到其他过滤器之前，否则无效  -->
+
+    <!--设置字符编码过滤器-->
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>
-            <!-- 设置字符编码为UTF-8 -->
             <param-name>encoding</param-name>
-            <param-value>utf-8</param-value>
+            <param-value>UTF-8</param-value>
         </init-param>
         <init-param>
             <param-name>forceResponseEncoding</param-name>
@@ -19,14 +19,19 @@
     </filter>
     <filter-mapping>
         <filter-name>CharacterEncodingFilter</filter-name>
-        <!-- 对所有的请求设置字符编码 -->
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     
+    <!--<filter>-->
+    <!--    <filter-name></filter-name>-->
+    <!--    <filter-class></filter-class>-->
+    <!--</filter>-->
+
+    <!--配置前端控制器-->
     <servlet>
-        <servlet-name>springmvc</servlet-name>
+        <servlet-name>DispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        
+
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:springmvc-config.xml</param-value>
@@ -34,9 +39,8 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>springmvc</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
-    
     
 </web-app>
